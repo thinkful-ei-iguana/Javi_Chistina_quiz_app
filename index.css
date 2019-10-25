@@ -24,6 +24,23 @@ header{
 
 }
 
+.title {
+    display: flex;
+
+}
+
+h1 {
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+span {
+    display: flex;
+}
+
 main {
     justify-content: center;
     align-items: center;
@@ -44,22 +61,30 @@ main {
 
 
 p{
-
+    display: flex;
 }
 
 form {
-
-    
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
 }
 
 .question {
+    padding: 1rem;
 
 }
 
 .start-quiz {
+    flex-direction: row;
+    flex-basis: 30%;
 
 }
 
 .begin-answer-wrapper {
+    flex-direction: row;
 
 }
