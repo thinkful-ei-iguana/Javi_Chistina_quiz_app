@@ -49,6 +49,8 @@
     ],
     correctAnswer: 4,
 },
+currentQuestion: 0,
+score: 0,
 ]
 
 let feedBack = {
