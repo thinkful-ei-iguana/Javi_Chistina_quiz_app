@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%
+
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+
+}
+
+header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+}
+
+main {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+ 
+}
+
+.question-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+
+}
+
+
+p{
+
+}
+
+form {
+
+    
+}
+
+.question {
+
+}
+
+.start-quiz {
+
+}
+
+.begin-answer-wrapper {
+
+}
