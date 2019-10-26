@@ -9,7 +9,7 @@ const quizData = {
         'Order Of the Phoenix',
         'Fantasic Beast',
         'Prisoner of Azkaban',
-        'Chamber of Secrets'
+        'Chamber of Secrets',
       ],
       correctAnswer: 2,
     },
@@ -77,9 +77,17 @@ function updateScore(){
   </span>`);
   
 }
-//Display the options for the current question
-function updateOptions(){
-
+//Display the answers for the current question
+function updateAnswers(){
+  let question = quizData.questions[quizData.currentQuestion];
+  //loop through answers and print
+  for(let i in quizData.questions){
+    console.log(question.answers[i]);
+    $('.js-answers').html(`<input type="radio" name="answers" id="option${i}" value="${question.answers[i]}" tabindex="${i}">
+    <label for="answers${i}"> ${question.answers[i]}test</label>
+    <span id="js-r${i}"></span>
+    `);
+  }
 }
 
 function renderAQuestion(){
@@ -90,7 +98,6 @@ function renderAQuestion(){
   $('.main').html(`<div>
   <form id="js-questions" class="question-form">
     
-    <fieldset>
       <div class="row question">
         <div class="col-12">
           <legend> ${question.question}</legend>
@@ -99,8 +106,8 @@ function renderAQuestion(){
 
       <div class="row options">
         <div class="col-12">
-                   <!--git answers to go here-->
-          <div class="js-options"></div>
+                   <!--display answers to go here-->
+          <div class="js-answers"></div>
       </div>
     </div>
   
@@ -110,11 +117,11 @@ function renderAQuestion(){
         <button type = "button" id="next-question" tabindex="6"> Next >></button>
       </div>
     </div>
-  </fieldset>
   </form>
 </div>`);
-//hides the 'next' button before submitting it
-$('#next-question').hide();
+  updateAnswers();
+  //hides the 'next' button before submitting it
+  $('#next-question').hide();
 }
 
 function handleQuestions(){
