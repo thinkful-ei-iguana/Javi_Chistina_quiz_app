@@ -126,9 +126,14 @@ function renderAQuestion(){
 function handleQuestions(){
 
 }
-
+//checks for if right or wrong answer
 function handleSelectOption(){
+  $('form').on('sumbit','#js-questions',function(e){
+    e.preventDefault();
 
+    let currentQuestion = quizData.questions[quizData.currentQuestion];
+    let selectedAnswer = $('input[name=answers]:checked').val();
+  });
 }
 
 function restartQuiz(){
