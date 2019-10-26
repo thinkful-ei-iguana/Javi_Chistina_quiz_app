@@ -86,7 +86,7 @@ function updateAnswers(){
     $('.js-answers').append(`<input type="radio" name="answers" id="option${i}" value="${question.answers[i]}" tabindex="${i}">
     <label for="answers${i}"> ${question.answers[i]}</label><br>
     <!-- will be used later to display information for wrong or right answer<span id="js-r${i}">test</span>-->`);
-  }
+  }// test span is commented out directly inside <!-- will be used later to display information for wrong or right answer<span id="js-r${i}">test</span>-->
 }
 
 function renderAQuestion(){
