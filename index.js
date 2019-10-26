@@ -197,7 +197,9 @@ function main(){
   }
 
   function restartQuiz(){
-
+    $('.main').on('click','#restart',function(){
+      renderAQuestion();
+    });
   }
 
   function handleQuizApp() {
