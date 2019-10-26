@@ -49,16 +49,16 @@ main {
 
 
 
-form, .default-form {
+form, .default-form{
     display: flex;
-    width: 400px;
-    height: 400px;
+    width: 80%;
+    height: 500px;
     border: 2px solid black;
     border-radius: 5px;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: auto;
 }
 
 .js-answers{
@@ -82,18 +82,31 @@ form, .default-form {
 
 /* html that is inside index.js file*/
 fieldset {
-    width:80%;
+    width: 500px;
     padding: 40px;
     margin:0 auto;
     background:rgba(255, 255, 255, 0.8);
     border-radius: 10px;
   }
 
+  .question-form{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    border-radius: 5px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+  }
+
 
 /*label is answer*/
   label{
-      display: inline-block;
+      display: inline;
       padding: 12px;
+      margin: 6px;
   }
 
   .answers span{
@@ -106,6 +119,7 @@ fieldset {
 
   .right-answer {
     background:ivory;
+    width: 100%;
     padding: 10px 20px;
     margin: 5px 20px;
     border:2px solid greenyellow;
@@ -113,6 +127,7 @@ fieldset {
    
    .wrong-answer {
      background:ivory;
+     width: 100%;
      padding: 10px;
      margin: 5px 20px;
      border:2px solid #fe0000;

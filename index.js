@@ -31,7 +31,7 @@ function main(){
           'Alan Rickman',
           'Robert Pattinson',
         ],
-        correctAnswer: 'Rober Pattinson',
+        correctAnswer: 'Robert Pattinson',
       },
       {
         question: 'When did Harry Potter first encounter the Dementors?',
@@ -67,7 +67,7 @@ function main(){
   //Displays current question number your on
   function updateQuestion(){
     $('.question').html(`<p id="js-answered"> 
-      Question: ${quizData.currentQuestion + 1}/${quizData.questions.length}
+      Question: ${quizData.currentQuestion}/${quizData.questions.length}
   </p>`);
   }
   //Displays score number
@@ -129,7 +129,8 @@ function main(){
   }
 
   function handleQuestions(){
-    $('form').on('click','#next-question',function(){
+    $('.main').on('click','#next-question',function(){
+      console.log('clicked');
       if(quizData.currentQuestion === quizData.questions.length){
         displayResults();
       } else {
@@ -149,11 +150,7 @@ function main(){
         alert('choose an option');
         return;
       }
-      if(selectedAnswer === quizData.correctAnswer){
-        console.log('correct');
-      } else {
-        console.log('wrong answer');
-      }
+    
 
       let id_num = currentQuest.answers.findIndex(i => i === selectedAnswer);
       let id = '#js-r' + ++id_num;
@@ -167,7 +164,6 @@ function main(){
         $(`${id}`).addClass('wrong-answer');
       }
     
-      quizData.currentQuestion++;
       quizData.currentQuestion++;
       $('#js-score').text(`Score: ${quizData.score}/${quizData.questions.length}`);
       $('#answer').hide();
