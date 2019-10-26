@@ -44,16 +44,10 @@ h2 {
     align-items: center;
 } */
 
-span {
-    display: flex;
-}
-
 main {
     justify-content: center;
     align-items: center;
     display: flex;
-
- 
 }
 
 .question-wrapper {
@@ -71,7 +65,10 @@ main {
 
 form {
     display: flex;
-    width: 100%;
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 5px;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
@@ -93,3 +90,13 @@ form {
     flex-direction: row;
 
 }
+
+
+/* html that is inside index.js file*/
+fieldset {
+    width:80%;
+    padding: 40px;
+    margin:0 auto;
+    background:rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }

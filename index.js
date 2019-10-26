@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 'use strict';
-function main(){
 
-  const quizData = [
+const quizData = { 
+  questions: [
     {
       question: 'Which of the following is not part of the  harry potter book series?',
       answers: [
@@ -52,46 +53,88 @@ function main(){
       ],
       correctAnswer: 4,
     },
-    {
-      currentQuestion: 0,
-    },
-    {
-      score: 0,
-    }
+  ],
+  currentQuestion: 0,
+  score: 0,
+};
 
-  ];
-
-  function startQuiz(){
-    $('.start-quiz').on('click',function(){
-      console.log('clicked');
-      renderAQuestion();
-    });
-  }
-
-  function renderAQuestion(){
-    let question = quizData.questions;
-  }
-
-  function handleQuestions(){
-
-  }
-
-  function handleSelectOption(){
-
-  }
-
-  function restartQuiz(){
-
-  }
-
-  function handleQuizApp() {
-    startQuiz();
-    handleQuestions();
-    handleSelectOption();
-    restartQuiz();
-  }
-
-  $(handleQuizApp);
+function startQuiz(){
+  $('.start-quiz').on('click',function(){
+    console.log('clicked');
+    renderAQuestion();
+  });
+}
+//Displays current question number your on
+function updateQuestion(){
+  $('.question').html(`<p id="js-answered"> 
+      Questions Number: ${quizData.currentQuestion + 1}/${quizData.questions.length}
+  </p>`);
+}
+//Displays score number
+function updateScore(){
+  $('.score').html(`<span id="js-score">
+  Score: ${quizData.score}/${quizData.questions.length}
+  </span>`);
+  
+}
+//Display the options for the current question
+function updateOptions(){
 
 }
-main();
+
+function renderAQuestion(){
+  let question = quizData.questions[quizData.currentQuestion];
+  updateQuestion();
+  updateScore();
+
+  $('.main').html(`<div>
+  <form id="js-questions" class="question-form">
+    
+    <fieldset>
+      <div class="row question">
+        <div class="col-12">
+          <legend> ${question.question}</legend>
+        </div>
+      </div>
+
+      <div class="row options">
+        <div class="col-12">
+                   <!--git answers to go here-->
+          <div class="js-options"></div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12">
+        <button type = "submit" id="answer" tabindex="5">Submit</button>
+        <button type = "button" id="next-question" tabindex="6"> Next >></button>
+      </div>
+    </div>
+  </fieldset>
+  </form>
+</div>`);
+//hides the 'next' button before submitting it
+$('#next-question').hide();
+}
+
+function handleQuestions(){
+
+}
+
+function handleSelectOption(){
+
+}
+
+function restartQuiz(){
+
+}
+
+function handleQuizApp() {
+  startQuiz();
+  handleQuestions();
+  handleSelectOption();
+  restartQuiz();
+}
+
+$(handleQuizApp);
+
