@@ -82,10 +82,10 @@ function updateAnswers(){
   let question = quizData.questions[quizData.currentQuestion];
   //loop through answers and print
   for(let i in quizData.questions){
-    //console.log(question.answers[i]);
+    console.log(question.answers[i]);
     $('.js-answers').append(`<input type="radio" name="answers" id="option${i}" value="${question.answers[i]}" tabindex="${i}">
-    <label for="answers${i}"> ${question.answers[i]}</label><br/>
-    <span id="js-r${i}"></span>`);
+    <label for="answers${i}"> ${question.answers[i]}</label><br>
+    <!-- will be used later to display information for wrong or right answer<span id="js-r${i}">test</span>-->`);
   }
 }
 
@@ -132,7 +132,12 @@ function handleSelectOption(){
     e.preventDefault();
 
     let currentQuestion = quizData.questions[quizData.currentQuestion];
-    let selectedAnswer = $('input[name=answers]:checked').val();
+    let selectedAnswer = $('input[name^=answers]:checked').val();
+
+    if(selectedAnswer){
+      console.log(selectedAnswer);
+    }
+
   });
 }
 
