@@ -82,11 +82,10 @@ function updateAnswers(){
   let question = quizData.questions[quizData.currentQuestion];
   //loop through answers and print
   for(let i in quizData.questions){
-    console.log(question.answers[i]);
-    $('.js-answers').html(`<input type="radio" name="answers" id="option${i}" value="${question.answers[i]}" tabindex="${i}">
-    <label for="answers${i}"> ${question.answers[i]}test</label>
-    <span id="js-r${i}"></span>
-    `);
+    //console.log(question.answers[i]);
+    $('.js-answers').append(`<input type="radio" name="answers" id="option${i}" value="${question.answers[i]}" tabindex="${i}">
+    <label for="answers${i}"> ${question.answers[i]}</label><br/>
+    <span id="js-r${i}"></span>`);
   }
 }
 
