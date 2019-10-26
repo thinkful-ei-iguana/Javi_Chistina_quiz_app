@@ -82,7 +82,7 @@ form, .default-form{
 
 /* html that is inside index.js file*/
 fieldset {
-    width: 500px;
+    width: 100%;
     padding: 40px;
     margin:0 auto;
     background:rgba(255, 255, 255, 0.8);
@@ -105,12 +105,15 @@ fieldset {
 /*label is answer*/
   label{
       display: inline;
-      padding: 12px;
-      margin: 6px;
+      padding: 0;
+  }
+
+  .input-label{
+      margin: 12px 0;
   }
 
   .answers span{
-    width: 100%;
+    width: 100px;
     display: inline-block;
     padding: 18px;
     margin: 0;

@@ -67,7 +67,7 @@ function main(){
   //Displays current question number your on
   function updateQuestion(){
     $('.question').html(`<p id="js-answered"> 
-      Question: ${quizData.currentQuestion}/${quizData.questions.length}
+      Question: ${quizData.currentQuestion + 1}/${quizData.questions.length}
   </p>`);
   }
   //Displays score number
@@ -83,9 +83,13 @@ function main(){
     //loop through answers and print
 
     for(let i = 0; i < question.answers.length; i++){
-      $('.js-answers').append(`<input type="radio" name="answers" id="option${i}" class="answer-options" value="${question.answers[i]}" tabindex="${i}">
-    <label for="answers${i}"> ${question.answers[i]}</label><br/>
-    <span id="js-r${i}" class="answer-opitions"></span>`);
+      $('.js-answers').append(`<div class="input-label">
+      <input type="radio" name="answers" id="answers${i+1}" class="answer-options" value="${question.answers[i]}" tabindex="${i+1}">
+    <label for="answers${i+1}"> ${question.answers[i]}</label><br/>
+    <div class="answer-span">
+    <span id="js-r${i+1}" class="answer-opitions"></span>
+    <div>
+    </div>`);
     }
   }
   //render question
@@ -125,7 +129,27 @@ function main(){
   }
 
   function displayResults(){
-
+    $('.main').html(`<div class="results">
+    <form id="js-restart-quiz">
+      <fieldset>
+        <div class="row">
+          <div class="col-12">
+            <legend>Your Score is: ${quizData.score}/${quizData.questions.length}</legend>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-12">
+            <button type="button" id="restart"> Restart Quiz </button>
+          </div>
+        </div>
+      </fieldset>
+  </form>
+  </div>`
+    );
+    quizData.currentQuestion = 0;
+    quizData.score = 0;
+    
   }
 
   function handleQuestions(){
@@ -157,7 +181,7 @@ function main(){
       $('span').removeClass('right-answer wrong-answer');
       if(selectedAnswer === currentQuest.correctAnswer){
         quizData.score++;
-        $(`${id}`).append(`CORRECT <br/>`);
+        $(`${id}`).append('CORRECT <br/>');
         $(`${id}`).addClass('right-answer');
       } else {
         $(`${id}`).append(`The answer is "${currentQuest.correctAnswer}"<br/>`);
