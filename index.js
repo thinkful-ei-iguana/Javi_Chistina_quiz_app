@@ -101,7 +101,6 @@ function main(){
     $('.question').show();
     $('.score').show();
 
-
     $('.main').html(`
   <form id="js-questions" class="question-form">
   <div class="container">
