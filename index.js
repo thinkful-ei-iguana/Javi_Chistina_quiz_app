@@ -85,7 +85,7 @@ function main(){
     for(let i = 0; i < question.answers.length; i++){
       $('.js-answers').append(`<div class="input-label">
       <input type="radio" name="answers" id="answers${i+1}" class="answer-options" value="${question.answers[i]}" tabindex="${i+1}">
-    <label for="answers${i+1}"> ${question.answers[i]}</label><br/>
+    <label for="answers${i+1}"> ${question.answers[i]}</label><br>
     <div class="answer-span">
     <span id="js-r${i+1}" class="answer-opitions"></span>
     <div>
@@ -98,58 +98,53 @@ function main(){
     let question = quizData.questions[quizData.currentQuestion];
     updateQuestion();
     updateScore();
+    $('.question').show();
+    $('.score').show();
 
-    $('.main').html(`<div>
+
+    $('.main').html(`
   <form id="js-questions" class="question-form">
-    
-      <div class="row question">
-        <div class="col-12">
-          <legend> ${question.question}</legend>
+  <div class="container">
+        <div class="question">
+          <legend class="quiz-questions"> ${question.question}</legend>
         </div>
-      </div>
 
-      <div class="row options">
-        <div class="col-12">
+        <div class="answers">
                    <!--display answers to go here-->
           <div class="js-answers"></div>
-      </div>
-    </div>
+        </div>
   
-    <div class="row">
-      <div class="col-12">
+      <div class="submitAndNext">
         <button type="submit" id="answer" tabindex="5">Submit</button>
         <button type="button" id="next-question" tabindex="6"> Next >></button>
       </div>
-    </div>
-  </form>
-</div>`);
+</div>
+  </form>`);
     updateAnswers();
     //hides the 'next' button before submitting it
     $('#next-question').hide();
+
   }
 
   function displayResults(){
     $('.main').html(`<div class="results">
     <form id="js-restart-quiz">
-      <fieldset>
-        <div class="row">
-          <div class="col-12">
-            <legend>Your Score is: ${quizData.score}/${quizData.questions.length}</legend>
+
+          <div class="final-score">
+            <legend class="result">You scored: ${quizData.score}/${quizData.questions.length}</legend>
           </div>
-        </div>
-      
-        <div class="row">
-          <div class="col-12">
+        
+          <div class="restart">
             <button type="button" id="restart"> Restart Quiz </button>
           </div>
-        </div>
-      </fieldset>
+        
   </form>
   </div>`
     );
     quizData.currentQuestion = 0;
     quizData.score = 0;
-    
+    $('.question').hide();
+    $('.score').hide();
   }
 
   function handleQuestions(){
