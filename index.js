@@ -59,20 +59,20 @@ function main(){
   };
 
   function startQuiz(){
-    $('.start-quiz').on('click',function(){
+    $('.start-quiz-button').on('click',function(){
       console.log('clicked');
       renderAQuestion();
     });
   }
   //Displays current question number your on
   function updateQuestion(){
-    $('.question').html(`<p id="js-answered"> 
+    $('.question').html(`<p id="question-order"> 
       Question: ${quizData.currentQuestion + 1}/${quizData.questions.length}
   </p>`);
   }
   //Displays score number
   function updateScore(){
-    $('.score').html(`<span id="js-score">
+    $('.score').html(`<span id="score-count">
   Score: ${quizData.score}/${quizData.questions.length}
   </span>`);
   
@@ -83,12 +83,18 @@ function main(){
     //loop through answers and print
 
     for(let i = 0; i < question.answers.length; i++){
-      $('.js-answers').append(`<div class="input-label">
+      $('.quiz-answers').append(`
+      <div class="input-label-box">
+
+      <div class="input-label-text">
       <input type="radio" name="answers" id="answers${i+1}" class="answer-options" value="${question.answers[i]}" tabindex="${i+1}">
-    <label for="answers${i+1}"> ${question.answers[i]}</label><br>
+      <label for="answers${i+1}"> ${question.answers[i]}</label><br>
+      </div>
+
     <div class="answer-span">
     <span id="js-r${i+1}" class="answer-opitions"></span>
-    <div>
+    </div>
+
     </div>`);
     }
   }
@@ -102,16 +108,17 @@ function main(){
     $('.score').show();
 
     $('.main').html(`
-  <form id="js-questions" class="question-form">
-  <div class="container">
-        <div class="question">
+  <form id="js-questions" class="question-form" role="main-quiz">
+   <div class="container">
+
+        <div class="question-box">
           <legend class="quiz-questions"> ${question.question}</legend>
         </div>
 
-        <div class="answers">
+        <div class="answer-box">
                    <!--display answers to go here-->
-          <div class="js-answers"></div>
-        </div>
+          <div class="quiz-answers"></div>
+        </div
   
       <div class="submitAndNext">
         <button type="submit" id="answer" tabindex="5">Submit</button>
@@ -126,16 +133,19 @@ function main(){
   }
 
   function displayResults(){
-    $('.main').html(`<div class="results">
+    $('.main').html(`
+    <div class="results">
     <form id="js-restart-quiz">
+      <div class="results-box">
 
-          <div class="final-score">
+          <div class="final-score-box">
             <legend class="result">You scored: ${quizData.score}/${quizData.questions.length}</legend>
           </div>
         
-          <div class="restart">
+          <div class="restart-button-box">
             <button type="button" id="restart"> Restart Quiz </button>
           </div>
+      </div>
         
   </form>
   </div>`
@@ -148,7 +158,6 @@ function main(){
 
   function handleQuestions(){
     $('.main').on('click','#next-question',function(){
-      console.log('clicked');
       if(quizData.currentQuestion === quizData.questions.length){
         displayResults();
       } else {
