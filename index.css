@@ -107,7 +107,9 @@ label{
 /*spans that display correct or wrong*/
 .right-answer{
 color: green;
+font-size: 1rem;
 }
 .wrong-answer{
 color: red;
+font-size: 1rem;
 }
