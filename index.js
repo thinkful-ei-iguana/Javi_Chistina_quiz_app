@@ -108,16 +108,16 @@ function main(){
     $('.score').show();
 
     $('.main').html(`
-  <form id="js-questions" class="question-form" role="main-quiz">
+  <form aria-label="harry potter questions" id="js-questions" class="question-form" role="main-quiz">
    <div class="container">
 
         <div class="question-box">
-          <legend class="quiz-questions"> ${question.question}</legend>
+          <h1 class="quiz-questions"> ${question.question}</h1>
         </div>
 
         <div class="answer-box">
                    <!--display answers to go here-->
-          <div class="quiz-answers"></div>
+          <div class="quiz-answers" ></div>
         </div
   
       <div class="submitAndNext">
