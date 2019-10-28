@@ -105,17 +105,6 @@ label:hover{
     /* border: 1px solid red; */
 }
 /*spans that display correct or wrong*/
-<<<<<<< HEAD
-.right-answer{
-color: green;
-font-size: 1rem;
-}
-.wrong-answer{
-color: red;
-font-size: 1rem;
-
-}
-=======
 .right-answer {
     font-size: 1rem;
     background:rgb(3, 55, 22);
