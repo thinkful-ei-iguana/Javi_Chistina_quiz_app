@@ -100,7 +100,8 @@ button:hover{
     /* border: 1px solid green; */
 }
 /*answer text*/
-label{
+label:hover{
+    color: rgb(0, 52, 0);
     /* border: 1px solid red; */
 }
 /*spans that display correct or wrong*/
