@@ -112,17 +112,17 @@ function main(){
    <div class="container">
 
         <div class="question-box">
-          <h1 class="quiz-questions"> ${question.question}</h1>
+          <h1 aria-label="question"class="quiz-questions"> ${question.question}</h1>
         </div>
 
         <div class="answer-box">
                    <!--display answers to go here-->
-          <div class="quiz-answers" ></div>
+          <div aria-label="list of answers" class="quiz-answers" ></div>
         </div
   
       <div class="submitAndNext">
-        <button type="submit" id="answer" tabindex="5">Submit</button>
-        <button type="button" id="next-question" tabindex="6"> Next >></button>
+        <button aria-label="submit question button" type="submit" id="answer" tabindex="5">Submit</button>
+        <button aria-label="next question button" type="button" id="next-question" tabindex="6"> Next >></button>
       </div>
 </div>
   </form>`);
