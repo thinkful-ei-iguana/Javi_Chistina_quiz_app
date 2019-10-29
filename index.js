@@ -112,7 +112,7 @@ function main(){
    <div class="container">
 
         <div class="question-box">
-          <h2 aria-label="question"class="quiz-questions"> ${question.question}</h2>
+          <h4 aria-label="question"class="quiz-questions"> ${question.question}</h4>
         </div>
 
         <div class="answer-box">
