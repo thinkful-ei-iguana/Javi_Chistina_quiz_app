@@ -60,7 +60,7 @@ function main(){
 
   function startQuiz(){
     $('.start-quiz-button').on('click',function(){
-      console.log('clicked');
+      
       renderAQuestion();
     });
   }
